@@ -1,0 +1,1224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище FurnitureModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fr_Type_Furniture">
+          <Key>
+            <PropertyRef Name="Id_Fr_Type_Furniture" />
+          </Key>
+          <Property Name="Id_Fr_Type_Furniture" Type="int" Nullable="false" />
+          <Property Name="Type_Furniture" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Equipment">
+          <Key>
+            <PropertyRef Name="Id_Fur_Equipment" />
+          </Key>
+          <Property Name="Id_Fur_Equipment" Type="int" Nullable="false" />
+          <Property Name="Labelling" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Type_Equipment" Type="int" Nullable="false" />
+          <Property Name="specifications" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Furniture">
+          <Key>
+            <PropertyRef Name="Id_Fur_Furniture" />
+          </Key>
+          <Property Name="Id_Fur_Furniture" Type="int" Nullable="false" />
+          <Property Name="Article" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Unit_Of_Measurement" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Id_Provider" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Id_Type_Furniture" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="float" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Manager">
+          <Key>
+            <PropertyRef Name="Id_Fur_Manager" />
+          </Key>
+          <Property Name="Id_Fur_Manager" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Fr_Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Material">
+          <Key>
+            <PropertyRef Name="Id_Fur_Material" />
+          </Key>
+          <Property Name="Id_Fur_Material" Type="int" Nullable="false" />
+          <Property Name="Article" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Provider" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Id_Fur_Type_Material" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="float" />
+          <Property Name="State_Standart" Type="nvarchar" MaxLength="50" />
+          <Property Name="Length" Type="float" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Id_Fur_Material_Unit_Of_Measurement" Type="int" />
+        </EntityType>
+        <EntityType Name="Fur_Material_Unit_Of_Measurement">
+          <Key>
+            <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+          </Key>
+          <Property Name="Id_Fur_Material_Unit_Of_Measurement" Type="int" Nullable="false" />
+          <Property Name="Fur_Material_Unit_Of_Measurement" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Operation_Specification">
+          <Key>
+            <PropertyRef Name="Id_Operation_Specification" />
+          </Key>
+          <Property Name="Id_Operation_Specification" Type="int" Nullable="false" />
+          <Property Name="Number_Operation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_Operation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time_On_Operation" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Id_Type_Equipment" Type="int" Nullable="false" />
+          <Property Name="Id_Specficaton" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Order">
+          <Key>
+            <PropertyRef Name="Id_Fr_Order" />
+          </Key>
+          <Property Name="Id_Fr_Order" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_User" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Manager" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+          <Property Name="End_Date" Type="date" Nullable="false" />
+          <Property Name="scheme" Type="image" />
+        </EntityType>
+        <EntityType Name="Fur_Product">
+          <Key>
+            <PropertyRef Name="Id_Fr_Product" />
+          </Key>
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Name_Product" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Provider">
+          <Key>
+            <PropertyRef Name="Id_Fur_Provider" />
+          </Key>
+          <Property Name="Id_Fur_Provider" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Delivery_Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Role">
+          <Key>
+            <PropertyRef Name="Id_Fur_Role" />
+          </Key>
+          <Property Name="Id_Fur_Role" Type="int" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_Assembly_Unit">
+          <Key>
+            <PropertyRef Name="Id_Specification_Assembly_Unit" />
+          </Key>
+          <Property Name="Id_Specification_Assembly_Unit" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Id_Type_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_hardware">
+          <Key>
+            <PropertyRef Name="Id_Specification_Hardware" />
+          </Key>
+          <Property Name="Id_Specification_Hardware" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Funiture" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_Materials">
+          <Key>
+            <PropertyRef Name="Id_Specification_Materials" />
+          </Key>
+          <Property Name="Id_Specification_Materials" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Id_Specficaton" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Equipment">
+          <Key>
+            <PropertyRef Name="Id_Type_Equipment" />
+          </Key>
+          <Property Name="Id_Type_Equipment" Type="int" Nullable="false" />
+          <Property Name="Type_Equipment" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Materal">
+          <Key>
+            <PropertyRef Name="Id_Type_material" />
+          </Key>
+          <Property Name="Id_Type_material" Type="int" Nullable="false" />
+          <Property Name="Type_Materal" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Product">
+          <Key>
+            <PropertyRef Name="Id_Fr_Type_Product" />
+          </Key>
+          <Property Name="Id_Fr_Type_Product" Type="int" Nullable="false" />
+          <Property Name="Type_Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fur_User">
+          <Key>
+            <PropertyRef Name="Id_Fur_User" />
+          </Key>
+          <Property Name="Id_Fur_User" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Role" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="Specification">
+          <Key>
+            <PropertyRef Name="Id_Specficaton" />
+          </Key>
+          <Property Name="Id_Specficaton" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="int" Nullable="false" />
+          <Property Name="Id_Fr_Matrerial" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Fur_Equipment_Fur_Type_Equipment">
+          <End Role="Fur_Type_Equipment" Type="Self.Fur_Type_Equipment" Multiplicity="1" />
+          <End Role="Fur_Equipment" Type="Self.Fur_Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Principal>
+            <Dependent Role="Fur_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Furniture_Fr_Type_Furniture">
+          <End Role="Fr_Type_Furniture" Type="Self.Fr_Type_Furniture" Multiplicity="1" />
+          <End Role="Fur_Furniture" Type="Self.Fur_Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fr_Type_Furniture">
+              <PropertyRef Name="Id_Fr_Type_Furniture" />
+            </Principal>
+            <Dependent Role="Fur_Furniture">
+              <PropertyRef Name="Id_Type_Furniture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Furniture_Fur_Provider">
+          <End Role="Fur_Provider" Type="Self.Fur_Provider" Multiplicity="1" />
+          <End Role="Fur_Furniture" Type="Self.Fur_Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Provider">
+              <PropertyRef Name="Id_Fur_Provider" />
+            </Principal>
+            <Dependent Role="Fur_Furniture">
+              <PropertyRef Name="Id_Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Manager_Fur_Order">
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="1" />
+          <End Role="Fur_Manager" Type="Self.Fur_Manager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_Order" />
+            </Principal>
+            <Dependent Role="Fur_Manager">
+              <PropertyRef Name="Id_Fr_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Material_Unit_Of_Measurement">
+          <End Role="Fur_Material_Unit_Of_Measurement" Type="Self.Fur_Material_Unit_Of_Measurement" Multiplicity="0..1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Material_Unit_Of_Measurement">
+              <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Provider">
+          <End Role="Fur_Provider" Type="Self.Fur_Provider" Multiplicity="1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Provider">
+              <PropertyRef Name="Id_Fur_Provider" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Type_Materal">
+          <End Role="Fur_Type_Materal" Type="Self.Fur_Type_Materal" Multiplicity="1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Materal">
+              <PropertyRef Name="Id_Type_material" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Fur_Type_Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Operation_Specification_Fur_Type_Equipment">
+          <End Role="Fur_Type_Equipment" Type="Self.Fur_Type_Equipment" Multiplicity="1" />
+          <End Role="Fur_Operation_Specification" Type="Self.Fur_Operation_Specification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Principal>
+            <Dependent Role="Fur_Operation_Specification">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Operation_Specification_Specification">
+          <End Role="Specification" Type="Self.Specification" Multiplicity="1" />
+          <End Role="Fur_Operation_Specification" Type="Self.Fur_Operation_Specification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Principal>
+            <Dependent Role="Fur_Operation_Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Order_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Order_Fur_User">
+          <End Role="Fur_User" Type="Self.Fur_User" Multiplicity="1" />
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_User">
+              <PropertyRef Name="Id_Fur_User" />
+            </Principal>
+            <Dependent Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Assembly_Unit_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Assembly_Unit" Type="Self.Fur_Specification_Assembly_Unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Assembly_Unit">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Assembly_Unit_Fur_Type_Product">
+          <End Role="Fur_Type_Product" Type="Self.Fur_Type_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Assembly_Unit" Type="Self.Fur_Specification_Assembly_Unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Product">
+              <PropertyRef Name="Id_Fr_Type_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Assembly_Unit">
+              <PropertyRef Name="Id_Type_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_hardware_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_hardware" Type="Self.Fur_Specification_hardware" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_hardware">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Materials_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Materials" Type="Self.Fur_Specification_Materials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Materials">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Materials_Specification">
+          <End Role="Specification" Type="Self.Specification" Multiplicity="1" />
+          <End Role="Fur_Specification_Materials" Type="Self.Fur_Specification_Materials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Materials">
+              <PropertyRef Name="Id_Specficaton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_User_Fur_Role">
+          <End Role="Fur_Role" Type="Self.Fur_Role" Multiplicity="1" />
+          <End Role="Fur_User" Type="Self.Fur_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Role">
+              <PropertyRef Name="Id_Fur_Role" />
+            </Principal>
+            <Dependent Role="Fur_User">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище FurnitureModelContainer">
+          <EntitySet Name="Fr_Type_Furniture" EntityType="Self.Fr_Type_Furniture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Equipment" EntityType="Self.Fur_Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Furniture" EntityType="Self.Fur_Furniture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Manager" EntityType="Self.Fur_Manager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Material" EntityType="Self.Fur_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Material_Unit_Of_Measurement" EntityType="Self.Fur_Material_Unit_Of_Measurement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Operation_Specification" EntityType="Self.Fur_Operation_Specification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Order" EntityType="Self.Fur_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Product" EntityType="Self.Fur_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Provider" EntityType="Self.Fur_Provider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Role" EntityType="Self.Fur_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Specification_Assembly_Unit" EntityType="Self.Fur_Specification_Assembly_Unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Specification_hardware" EntityType="Self.Fur_Specification_hardware" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Specification_Materials" EntityType="Self.Fur_Specification_Materials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Type_Equipment" EntityType="Self.Fur_Type_Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Type_Materal" EntityType="Self.Fur_Type_Materal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_Type_Product" EntityType="Self.Fur_Type_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fur_User" EntityType="Self.Fur_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specification" EntityType="Self.Specification" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Fur_Equipment_Fur_Type_Equipment" Association="Self.FK_Fur_Equipment_Fur_Type_Equipment">
+            <End Role="Fur_Type_Equipment" EntitySet="Fur_Type_Equipment" />
+            <End Role="Fur_Equipment" EntitySet="Fur_Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Furniture_Fr_Type_Furniture" Association="Self.FK_Fur_Furniture_Fr_Type_Furniture">
+            <End Role="Fr_Type_Furniture" EntitySet="Fr_Type_Furniture" />
+            <End Role="Fur_Furniture" EntitySet="Fur_Furniture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Furniture_Fur_Provider" Association="Self.FK_Fur_Furniture_Fur_Provider">
+            <End Role="Fur_Provider" EntitySet="Fur_Provider" />
+            <End Role="Fur_Furniture" EntitySet="Fur_Furniture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Manager_Fur_Order" Association="Self.FK_Fur_Manager_Fur_Order">
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+            <End Role="Fur_Manager" EntitySet="Fur_Manager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Material_Unit_Of_Measurement" Association="Self.FK_Fur_Material_Fur_Material_Unit_Of_Measurement">
+            <End Role="Fur_Material_Unit_Of_Measurement" EntitySet="Fur_Material_Unit_Of_Measurement" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Provider" Association="Self.FK_Fur_Material_Fur_Provider">
+            <End Role="Fur_Provider" EntitySet="Fur_Provider" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Type_Materal" Association="Self.FK_Fur_Material_Fur_Type_Materal">
+            <End Role="Fur_Type_Materal" EntitySet="Fur_Type_Materal" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Operation_Specification_Fur_Type_Equipment" Association="Self.FK_Fur_Operation_Specification_Fur_Type_Equipment">
+            <End Role="Fur_Type_Equipment" EntitySet="Fur_Type_Equipment" />
+            <End Role="Fur_Operation_Specification" EntitySet="Fur_Operation_Specification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Operation_Specification_Specification" Association="Self.FK_Fur_Operation_Specification_Specification">
+            <End Role="Specification" EntitySet="Specification" />
+            <End Role="Fur_Operation_Specification" EntitySet="Fur_Operation_Specification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Order_Fur_Product" Association="Self.FK_Fur_Order_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Order_Fur_User" Association="Self.FK_Fur_Order_Fur_User">
+            <End Role="Fur_User" EntitySet="Fur_User" />
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Assembly_Unit_Fur_Product" Association="Self.FK_Fur_Specification_Assembly_Unit_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_Assembly_Unit" EntitySet="Fur_Specification_Assembly_Unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Assembly_Unit_Fur_Type_Product" Association="Self.FK_Fur_Specification_Assembly_Unit_Fur_Type_Product">
+            <End Role="Fur_Type_Product" EntitySet="Fur_Type_Product" />
+            <End Role="Fur_Specification_Assembly_Unit" EntitySet="Fur_Specification_Assembly_Unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_hardware_Fur_Product" Association="Self.FK_Fur_Specification_hardware_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_hardware" EntitySet="Fur_Specification_hardware" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Materials_Fur_Product" Association="Self.FK_Fur_Specification_Materials_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_Materials" EntitySet="Fur_Specification_Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Materials_Specification" Association="Self.FK_Fur_Specification_Materials_Specification">
+            <End Role="Specification" EntitySet="Specification" />
+            <End Role="Fur_Specification_Materials" EntitySet="Fur_Specification_Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_User_Fur_Role" Association="Self.FK_Fur_User_Fur_Role">
+            <End Role="Fur_Role" EntitySet="Fur_Role" />
+            <End Role="Fur_User" EntitySet="Fur_User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FurnitureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fr_Type_Furniture">
+          <Key>
+            <PropertyRef Name="Id_Fr_Type_Furniture" />
+          </Key>
+          <Property Name="Id_Fr_Type_Furniture" Type="Int32" Nullable="false" />
+          <Property Name="Type_Furniture" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Furniture" Relationship="Self.FK_Fur_Furniture_Fr_Type_Furniture" FromRole="Fr_Type_Furniture" ToRole="Fur_Furniture" />
+        </EntityType>
+        <EntityType Name="Fur_Equipment">
+          <Key>
+            <PropertyRef Name="Id_Fur_Equipment" />
+          </Key>
+          <Property Name="Id_Fur_Equipment" Type="Int32" Nullable="false" />
+          <Property Name="Labelling" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Type_Equipment" Type="Int32" Nullable="false" />
+          <Property Name="specifications" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Type_Equipment" Relationship="Self.FK_Fur_Equipment_Fur_Type_Equipment" FromRole="Fur_Equipment" ToRole="Fur_Type_Equipment" />
+        </EntityType>
+        <EntityType Name="Fur_Furniture">
+          <Key>
+            <PropertyRef Name="Id_Fur_Furniture" />
+          </Key>
+          <Property Name="Id_Fur_Furniture" Type="Int32" Nullable="false" />
+          <Property Name="Article" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unit_Of_Measurement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Id_Provider" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Id_Type_Furniture" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Double" Nullable="false" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Fr_Type_Furniture" Relationship="Self.FK_Fur_Furniture_Fr_Type_Furniture" FromRole="Fur_Furniture" ToRole="Fr_Type_Furniture" />
+          <NavigationProperty Name="Fur_Provider" Relationship="Self.FK_Fur_Furniture_Fur_Provider" FromRole="Fur_Furniture" ToRole="Fur_Provider" />
+        </EntityType>
+        <EntityType Name="Fur_Manager">
+          <Key>
+            <PropertyRef Name="Id_Fur_Manager" />
+          </Key>
+          <Property Name="Id_Fur_Manager" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Fr_Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Order" Relationship="Self.FK_Fur_Manager_Fur_Order" FromRole="Fur_Manager" ToRole="Fur_Order" />
+        </EntityType>
+        <EntityType Name="Fur_Material">
+          <Key>
+            <PropertyRef Name="Id_Fur_Material" />
+          </Key>
+          <Property Name="Id_Fur_Material" Type="Int32" Nullable="false" />
+          <Property Name="Article" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Provider" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Id_Fur_Type_Material" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Double" />
+          <Property Name="State_Standart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Length" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Fur_Material_Unit_Of_Measurement" Type="Int32" />
+          <NavigationProperty Name="Fur_Material_Unit_Of_Measurement" Relationship="Self.FK_Fur_Material_Fur_Material_Unit_Of_Measurement" FromRole="Fur_Material" ToRole="Fur_Material_Unit_Of_Measurement" />
+          <NavigationProperty Name="Fur_Provider" Relationship="Self.FK_Fur_Material_Fur_Provider" FromRole="Fur_Material" ToRole="Fur_Provider" />
+          <NavigationProperty Name="Fur_Type_Materal" Relationship="Self.FK_Fur_Material_Fur_Type_Materal" FromRole="Fur_Material" ToRole="Fur_Type_Materal" />
+        </EntityType>
+        <EntityType Name="Fur_Material_Unit_Of_Measurement">
+          <Key>
+            <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+          </Key>
+          <Property Name="Id_Fur_Material_Unit_Of_Measurement" Type="Int32" Nullable="false" />
+          <Property Name="Fur_Material_Unit_Of_Measurement1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Material" Relationship="Self.FK_Fur_Material_Fur_Material_Unit_Of_Measurement" FromRole="Fur_Material_Unit_Of_Measurement" ToRole="Fur_Material" />
+        </EntityType>
+        <EntityType Name="Fur_Operation_Specification">
+          <Key>
+            <PropertyRef Name="Id_Operation_Specification" />
+          </Key>
+          <Property Name="Id_Operation_Specification" Type="Int32" Nullable="false" />
+          <Property Name="Number_Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Time_On_Operation" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Id_Type_Equipment" Type="Int32" Nullable="false" />
+          <Property Name="Id_Specficaton" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Type_Equipment" Relationship="Self.FK_Fur_Operation_Specification_Fur_Type_Equipment" FromRole="Fur_Operation_Specification" ToRole="Fur_Type_Equipment" />
+          <NavigationProperty Name="Specification" Relationship="Self.FK_Fur_Operation_Specification_Specification" FromRole="Fur_Operation_Specification" ToRole="Specification" />
+        </EntityType>
+        <EntityType Name="Fur_Order">
+          <Key>
+            <PropertyRef Name="Id_Fr_Order" />
+          </Key>
+          <Property Name="Id_Fr_Order" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_User" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Manager" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="scheme" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Fur_Manager" Relationship="Self.FK_Fur_Manager_Fur_Order" FromRole="Fur_Order" ToRole="Fur_Manager" />
+          <NavigationProperty Name="Fur_Product" Relationship="Self.FK_Fur_Order_Fur_Product" FromRole="Fur_Order" ToRole="Fur_Product" />
+          <NavigationProperty Name="Fur_User" Relationship="Self.FK_Fur_Order_Fur_User" FromRole="Fur_Order" ToRole="Fur_User" />
+        </EntityType>
+        <EntityType Name="Fur_Product">
+          <Key>
+            <PropertyRef Name="Id_Fr_Product" />
+          </Key>
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Name_Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Order" Relationship="Self.FK_Fur_Order_Fur_Product" FromRole="Fur_Product" ToRole="Fur_Order" />
+          <NavigationProperty Name="Fur_Specification_Assembly_Unit" Relationship="Self.FK_Fur_Specification_Assembly_Unit_Fur_Product" FromRole="Fur_Product" ToRole="Fur_Specification_Assembly_Unit" />
+          <NavigationProperty Name="Fur_Specification_hardware" Relationship="Self.FK_Fur_Specification_hardware_Fur_Product" FromRole="Fur_Product" ToRole="Fur_Specification_hardware" />
+          <NavigationProperty Name="Fur_Specification_Materials" Relationship="Self.FK_Fur_Specification_Materials_Fur_Product" FromRole="Fur_Product" ToRole="Fur_Specification_Materials" />
+        </EntityType>
+        <EntityType Name="Fur_Provider">
+          <Key>
+            <PropertyRef Name="Id_Fur_Provider" />
+          </Key>
+          <Property Name="Id_Fur_Provider" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Delivery_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Furniture" Relationship="Self.FK_Fur_Furniture_Fur_Provider" FromRole="Fur_Provider" ToRole="Fur_Furniture" />
+          <NavigationProperty Name="Fur_Material" Relationship="Self.FK_Fur_Material_Fur_Provider" FromRole="Fur_Provider" ToRole="Fur_Material" />
+        </EntityType>
+        <EntityType Name="Fur_Role">
+          <Key>
+            <PropertyRef Name="Id_Fur_Role" />
+          </Key>
+          <Property Name="Id_Fur_Role" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_User" Relationship="Self.FK_Fur_User_Fur_Role" FromRole="Fur_Role" ToRole="Fur_User" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_Assembly_Unit">
+          <Key>
+            <PropertyRef Name="Id_Specification_Assembly_Unit" />
+          </Key>
+          <Property Name="Id_Specification_Assembly_Unit" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Id_Type_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Product" Relationship="Self.FK_Fur_Specification_Assembly_Unit_Fur_Product" FromRole="Fur_Specification_Assembly_Unit" ToRole="Fur_Product" />
+          <NavigationProperty Name="Fur_Type_Product" Relationship="Self.FK_Fur_Specification_Assembly_Unit_Fur_Type_Product" FromRole="Fur_Specification_Assembly_Unit" ToRole="Fur_Type_Product" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_hardware">
+          <Key>
+            <PropertyRef Name="Id_Specification_Hardware" />
+          </Key>
+          <Property Name="Id_Specification_Hardware" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Funiture" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Product" Relationship="Self.FK_Fur_Specification_hardware_Fur_Product" FromRole="Fur_Specification_hardware" ToRole="Fur_Product" />
+        </EntityType>
+        <EntityType Name="Fur_Specification_Materials">
+          <Key>
+            <PropertyRef Name="Id_Specification_Materials" />
+          </Key>
+          <Property Name="Id_Specification_Materials" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Id_Specficaton" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Product" Relationship="Self.FK_Fur_Specification_Materials_Fur_Product" FromRole="Fur_Specification_Materials" ToRole="Fur_Product" />
+          <NavigationProperty Name="Specification" Relationship="Self.FK_Fur_Specification_Materials_Specification" FromRole="Fur_Specification_Materials" ToRole="Specification" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Equipment">
+          <Key>
+            <PropertyRef Name="Id_Type_Equipment" />
+          </Key>
+          <Property Name="Id_Type_Equipment" Type="Int32" Nullable="false" />
+          <Property Name="Type_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Equipment" Relationship="Self.FK_Fur_Equipment_Fur_Type_Equipment" FromRole="Fur_Type_Equipment" ToRole="Fur_Equipment" />
+          <NavigationProperty Name="Fur_Operation_Specification" Relationship="Self.FK_Fur_Operation_Specification_Fur_Type_Equipment" FromRole="Fur_Type_Equipment" ToRole="Fur_Operation_Specification" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Materal">
+          <Key>
+            <PropertyRef Name="Id_Type_material" />
+          </Key>
+          <Property Name="Id_Type_material" Type="Int32" Nullable="false" />
+          <Property Name="Type_Materal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Material" Relationship="Self.FK_Fur_Material_Fur_Type_Materal" FromRole="Fur_Type_Materal" ToRole="Fur_Material" />
+        </EntityType>
+        <EntityType Name="Fur_Type_Product">
+          <Key>
+            <PropertyRef Name="Id_Fr_Type_Product" />
+          </Key>
+          <Property Name="Id_Fr_Type_Product" Type="Int32" Nullable="false" />
+          <Property Name="Type_Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fur_Specification_Assembly_Unit" Relationship="Self.FK_Fur_Specification_Assembly_Unit_Fur_Type_Product" FromRole="Fur_Type_Product" ToRole="Fur_Specification_Assembly_Unit" />
+        </EntityType>
+        <EntityType Name="Fur_User">
+          <Key>
+            <PropertyRef Name="Id_Fur_User" />
+          </Key>
+          <Property Name="Id_Fur_User" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_Role" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Fur_Order" Relationship="Self.FK_Fur_Order_Fur_User" FromRole="Fur_User" ToRole="Fur_Order" />
+          <NavigationProperty Name="Fur_Role" Relationship="Self.FK_Fur_User_Fur_Role" FromRole="Fur_User" ToRole="Fur_Role" />
+        </EntityType>
+        <EntityType Name="Specification">
+          <Key>
+            <PropertyRef Name="Id_Specficaton" />
+          </Key>
+          <Property Name="Id_Specficaton" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Product" Type="Int32" Nullable="false" />
+          <Property Name="Id_Fr_Matrerial" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fur_Operation_Specification" Relationship="Self.FK_Fur_Operation_Specification_Specification" FromRole="Specification" ToRole="Fur_Operation_Specification" />
+          <NavigationProperty Name="Fur_Specification_Materials" Relationship="Self.FK_Fur_Specification_Materials_Specification" FromRole="Specification" ToRole="Fur_Specification_Materials" />
+        </EntityType>
+        <Association Name="FK_Fur_Furniture_Fr_Type_Furniture">
+          <End Role="Fr_Type_Furniture" Type="Self.Fr_Type_Furniture" Multiplicity="1" />
+          <End Role="Fur_Furniture" Type="Self.Fur_Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fr_Type_Furniture">
+              <PropertyRef Name="Id_Fr_Type_Furniture" />
+            </Principal>
+            <Dependent Role="Fur_Furniture">
+              <PropertyRef Name="Id_Type_Furniture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Equipment_Fur_Type_Equipment">
+          <End Role="Fur_Type_Equipment" Type="Self.Fur_Type_Equipment" Multiplicity="1" />
+          <End Role="Fur_Equipment" Type="Self.Fur_Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Principal>
+            <Dependent Role="Fur_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Furniture_Fur_Provider">
+          <End Role="Fur_Provider" Type="Self.Fur_Provider" Multiplicity="1" />
+          <End Role="Fur_Furniture" Type="Self.Fur_Furniture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Provider">
+              <PropertyRef Name="Id_Fur_Provider" />
+            </Principal>
+            <Dependent Role="Fur_Furniture">
+              <PropertyRef Name="Id_Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Manager_Fur_Order">
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="1" />
+          <End Role="Fur_Manager" Type="Self.Fur_Manager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_Order" />
+            </Principal>
+            <Dependent Role="Fur_Manager">
+              <PropertyRef Name="Id_Fr_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Material_Unit_Of_Measurement">
+          <End Role="Fur_Material_Unit_Of_Measurement" Type="Self.Fur_Material_Unit_Of_Measurement" Multiplicity="0..1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Material_Unit_Of_Measurement">
+              <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Fur_Material_Unit_Of_Measurement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Provider">
+          <End Role="Fur_Provider" Type="Self.Fur_Provider" Multiplicity="1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Provider">
+              <PropertyRef Name="Id_Fur_Provider" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Material_Fur_Type_Materal">
+          <End Role="Fur_Type_Materal" Type="Self.Fur_Type_Materal" Multiplicity="1" />
+          <End Role="Fur_Material" Type="Self.Fur_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Materal">
+              <PropertyRef Name="Id_Type_material" />
+            </Principal>
+            <Dependent Role="Fur_Material">
+              <PropertyRef Name="Id_Fur_Type_Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Operation_Specification_Fur_Type_Equipment">
+          <End Role="Fur_Type_Equipment" Type="Self.Fur_Type_Equipment" Multiplicity="1" />
+          <End Role="Fur_Operation_Specification" Type="Self.Fur_Operation_Specification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Equipment">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Principal>
+            <Dependent Role="Fur_Operation_Specification">
+              <PropertyRef Name="Id_Type_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Operation_Specification_Specification">
+          <End Role="Specification" Type="Self.Specification" Multiplicity="1" />
+          <End Role="Fur_Operation_Specification" Type="Self.Fur_Operation_Specification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Principal>
+            <Dependent Role="Fur_Operation_Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Order_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Order_Fur_User">
+          <End Role="Fur_User" Type="Self.Fur_User" Multiplicity="1" />
+          <End Role="Fur_Order" Type="Self.Fur_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_User">
+              <PropertyRef Name="Id_Fur_User" />
+            </Principal>
+            <Dependent Role="Fur_Order">
+              <PropertyRef Name="Id_Fr_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Assembly_Unit_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Assembly_Unit" Type="Self.Fur_Specification_Assembly_Unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Assembly_Unit">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_hardware_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_hardware" Type="Self.Fur_Specification_hardware" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_hardware">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Materials_Fur_Product">
+          <End Role="Fur_Product" Type="Self.Fur_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Materials" Type="Self.Fur_Specification_Materials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Product">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Materials">
+              <PropertyRef Name="Id_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_User_Fur_Role">
+          <End Role="Fur_Role" Type="Self.Fur_Role" Multiplicity="1" />
+          <End Role="Fur_User" Type="Self.Fur_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Role">
+              <PropertyRef Name="Id_Fur_Role" />
+            </Principal>
+            <Dependent Role="Fur_User">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Assembly_Unit_Fur_Type_Product">
+          <End Role="Fur_Type_Product" Type="Self.Fur_Type_Product" Multiplicity="1" />
+          <End Role="Fur_Specification_Assembly_Unit" Type="Self.Fur_Specification_Assembly_Unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fur_Type_Product">
+              <PropertyRef Name="Id_Fr_Type_Product" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Assembly_Unit">
+              <PropertyRef Name="Id_Type_Fr_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fur_Specification_Materials_Specification">
+          <End Role="Specification" Type="Self.Specification" Multiplicity="1" />
+          <End Role="Fur_Specification_Materials" Type="Self.Fur_Specification_Materials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specification">
+              <PropertyRef Name="Id_Specficaton" />
+            </Principal>
+            <Dependent Role="Fur_Specification_Materials">
+              <PropertyRef Name="Id_Specficaton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FurnitureBD" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fr_Type_Furniture" EntityType="Self.Fr_Type_Furniture" />
+          <EntitySet Name="Fur_Equipment" EntityType="Self.Fur_Equipment" />
+          <EntitySet Name="Fur_Furniture" EntityType="Self.Fur_Furniture" />
+          <EntitySet Name="Fur_Manager" EntityType="Self.Fur_Manager" />
+          <EntitySet Name="Fur_Material" EntityType="Self.Fur_Material" />
+          <EntitySet Name="Fur_Material_Unit_Of_Measurement" EntityType="Self.Fur_Material_Unit_Of_Measurement" />
+          <EntitySet Name="Fur_Operation_Specification" EntityType="Self.Fur_Operation_Specification" />
+          <EntitySet Name="Fur_Order" EntityType="Self.Fur_Order" />
+          <EntitySet Name="Fur_Product" EntityType="Self.Fur_Product" />
+          <EntitySet Name="Fur_Provider" EntityType="Self.Fur_Provider" />
+          <EntitySet Name="Fur_Role" EntityType="Self.Fur_Role" />
+          <EntitySet Name="Fur_Specification_Assembly_Unit" EntityType="Self.Fur_Specification_Assembly_Unit" />
+          <EntitySet Name="Fur_Specification_hardware" EntityType="Self.Fur_Specification_hardware" />
+          <EntitySet Name="Fur_Specification_Materials" EntityType="Self.Fur_Specification_Materials" />
+          <EntitySet Name="Fur_Type_Equipment" EntityType="Self.Fur_Type_Equipment" />
+          <EntitySet Name="Fur_Type_Materal" EntityType="Self.Fur_Type_Materal" />
+          <EntitySet Name="Fur_Type_Product" EntityType="Self.Fur_Type_Product" />
+          <EntitySet Name="Fur_User" EntityType="Self.Fur_User" />
+          <EntitySet Name="Specification" EntityType="Self.Specification" />
+          <AssociationSet Name="FK_Fur_Furniture_Fr_Type_Furniture" Association="Self.FK_Fur_Furniture_Fr_Type_Furniture">
+            <End Role="Fr_Type_Furniture" EntitySet="Fr_Type_Furniture" />
+            <End Role="Fur_Furniture" EntitySet="Fur_Furniture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Equipment_Fur_Type_Equipment" Association="Self.FK_Fur_Equipment_Fur_Type_Equipment">
+            <End Role="Fur_Type_Equipment" EntitySet="Fur_Type_Equipment" />
+            <End Role="Fur_Equipment" EntitySet="Fur_Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Furniture_Fur_Provider" Association="Self.FK_Fur_Furniture_Fur_Provider">
+            <End Role="Fur_Provider" EntitySet="Fur_Provider" />
+            <End Role="Fur_Furniture" EntitySet="Fur_Furniture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Manager_Fur_Order" Association="Self.FK_Fur_Manager_Fur_Order">
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+            <End Role="Fur_Manager" EntitySet="Fur_Manager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Material_Unit_Of_Measurement" Association="Self.FK_Fur_Material_Fur_Material_Unit_Of_Measurement">
+            <End Role="Fur_Material_Unit_Of_Measurement" EntitySet="Fur_Material_Unit_Of_Measurement" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Provider" Association="Self.FK_Fur_Material_Fur_Provider">
+            <End Role="Fur_Provider" EntitySet="Fur_Provider" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Material_Fur_Type_Materal" Association="Self.FK_Fur_Material_Fur_Type_Materal">
+            <End Role="Fur_Type_Materal" EntitySet="Fur_Type_Materal" />
+            <End Role="Fur_Material" EntitySet="Fur_Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Operation_Specification_Fur_Type_Equipment" Association="Self.FK_Fur_Operation_Specification_Fur_Type_Equipment">
+            <End Role="Fur_Type_Equipment" EntitySet="Fur_Type_Equipment" />
+            <End Role="Fur_Operation_Specification" EntitySet="Fur_Operation_Specification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Operation_Specification_Specification" Association="Self.FK_Fur_Operation_Specification_Specification">
+            <End Role="Specification" EntitySet="Specification" />
+            <End Role="Fur_Operation_Specification" EntitySet="Fur_Operation_Specification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Order_Fur_Product" Association="Self.FK_Fur_Order_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Order_Fur_User" Association="Self.FK_Fur_Order_Fur_User">
+            <End Role="Fur_User" EntitySet="Fur_User" />
+            <End Role="Fur_Order" EntitySet="Fur_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Assembly_Unit_Fur_Product" Association="Self.FK_Fur_Specification_Assembly_Unit_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_Assembly_Unit" EntitySet="Fur_Specification_Assembly_Unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_hardware_Fur_Product" Association="Self.FK_Fur_Specification_hardware_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_hardware" EntitySet="Fur_Specification_hardware" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Materials_Fur_Product" Association="Self.FK_Fur_Specification_Materials_Fur_Product">
+            <End Role="Fur_Product" EntitySet="Fur_Product" />
+            <End Role="Fur_Specification_Materials" EntitySet="Fur_Specification_Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_User_Fur_Role" Association="Self.FK_Fur_User_Fur_Role">
+            <End Role="Fur_Role" EntitySet="Fur_Role" />
+            <End Role="Fur_User" EntitySet="Fur_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Assembly_Unit_Fur_Type_Product" Association="Self.FK_Fur_Specification_Assembly_Unit_Fur_Type_Product">
+            <End Role="Fur_Type_Product" EntitySet="Fur_Type_Product" />
+            <End Role="Fur_Specification_Assembly_Unit" EntitySet="Fur_Specification_Assembly_Unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fur_Specification_Materials_Specification" Association="Self.FK_Fur_Specification_Materials_Specification">
+            <End Role="Specification" EntitySet="Specification" />
+            <End Role="Fur_Specification_Materials" EntitySet="Fur_Specification_Materials" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FurnitureModelContainer" CdmEntityContainer="FurnitureBD">
+          <EntitySetMapping Name="Fr_Type_Furniture">
+            <EntityTypeMapping TypeName="FurnitureModel.Fr_Type_Furniture">
+              <MappingFragment StoreEntitySet="Fr_Type_Furniture">
+                <ScalarProperty Name="Id_Fr_Type_Furniture" ColumnName="Id_Fr_Type_Furniture" />
+                <ScalarProperty Name="Type_Furniture" ColumnName="Type_Furniture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Equipment">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Equipment">
+              <MappingFragment StoreEntitySet="Fur_Equipment">
+                <ScalarProperty Name="Id_Fur_Equipment" ColumnName="Id_Fur_Equipment" />
+                <ScalarProperty Name="Labelling" ColumnName="Labelling" />
+                <ScalarProperty Name="Id_Type_Equipment" ColumnName="Id_Type_Equipment" />
+                <ScalarProperty Name="specifications" ColumnName="specifications" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Furniture">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Furniture">
+              <MappingFragment StoreEntitySet="Fur_Furniture">
+                <ScalarProperty Name="Id_Fur_Furniture" ColumnName="Id_Fur_Furniture" />
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Unit_Of_Measurement" ColumnName="Unit_Of_Measurement" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Id_Provider" ColumnName="Id_Provider" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id_Type_Furniture" ColumnName="Id_Type_Furniture" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Manager">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Manager">
+              <MappingFragment StoreEntitySet="Fur_Manager">
+                <ScalarProperty Name="Id_Fur_Manager" ColumnName="Id_Fur_Manager" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Id_Fr_Order" ColumnName="Id_Fr_Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Material">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Material">
+              <MappingFragment StoreEntitySet="Fur_Material">
+                <ScalarProperty Name="Id_Fur_Material" ColumnName="Id_Fur_Material" />
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Id_Provider" ColumnName="Id_Provider" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id_Fur_Type_Material" ColumnName="Id_Fur_Type_Material" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="State_Standart" ColumnName="State_Standart" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id_Fur_Material_Unit_Of_Measurement" ColumnName="Id_Fur_Material_Unit_Of_Measurement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Material_Unit_Of_Measurement">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Material_Unit_Of_Measurement">
+              <MappingFragment StoreEntitySet="Fur_Material_Unit_Of_Measurement">
+                <ScalarProperty Name="Id_Fur_Material_Unit_Of_Measurement" ColumnName="Id_Fur_Material_Unit_Of_Measurement" />
+                <ScalarProperty Name="Fur_Material_Unit_Of_Measurement1" ColumnName="Fur_Material_Unit_Of_Measurement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Operation_Specification">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Operation_Specification">
+              <MappingFragment StoreEntitySet="Fur_Operation_Specification">
+                <ScalarProperty Name="Id_Operation_Specification" ColumnName="Id_Operation_Specification" />
+                <ScalarProperty Name="Number_Operation" ColumnName="Number_Operation" />
+                <ScalarProperty Name="Name_Operation" ColumnName="Name_Operation" />
+                <ScalarProperty Name="Time_On_Operation" ColumnName="Time_On_Operation" />
+                <ScalarProperty Name="Id_Type_Equipment" ColumnName="Id_Type_Equipment" />
+                <ScalarProperty Name="Id_Specficaton" ColumnName="Id_Specficaton" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Order">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Order">
+              <MappingFragment StoreEntitySet="Fur_Order">
+                <ScalarProperty Name="Id_Fr_Order" ColumnName="Id_Fr_Order" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Id_Fr_User" ColumnName="Id_Fr_User" />
+                <ScalarProperty Name="Id_Fr_Manager" ColumnName="Id_Fr_Manager" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="scheme" ColumnName="scheme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Product">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Product">
+              <MappingFragment StoreEntitySet="Fur_Product">
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Provider">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Provider">
+              <MappingFragment StoreEntitySet="Fur_Provider">
+                <ScalarProperty Name="Id_Fur_Provider" ColumnName="Id_Fur_Provider" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Role">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Role">
+              <MappingFragment StoreEntitySet="Fur_Role">
+                <ScalarProperty Name="Id_Fur_Role" ColumnName="Id_Fur_Role" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Specification_Assembly_Unit">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Specification_Assembly_Unit">
+              <MappingFragment StoreEntitySet="Fur_Specification_Assembly_Unit">
+                <ScalarProperty Name="Id_Specification_Assembly_Unit" ColumnName="Id_Specification_Assembly_Unit" />
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Id_Type_Fr_Product" ColumnName="Id_Type_Fr_Product" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Specification_hardware">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Specification_hardware">
+              <MappingFragment StoreEntitySet="Fur_Specification_hardware">
+                <ScalarProperty Name="Id_Specification_Hardware" ColumnName="Id_Specification_Hardware" />
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Id_Fr_Funiture" ColumnName="Id_Fr_Funiture" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Specification_Materials">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Specification_Materials">
+              <MappingFragment StoreEntitySet="Fur_Specification_Materials">
+                <ScalarProperty Name="Id_Specification_Materials" ColumnName="Id_Specification_Materials" />
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Id_Specficaton" ColumnName="Id_Specficaton" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Type_Equipment">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Type_Equipment">
+              <MappingFragment StoreEntitySet="Fur_Type_Equipment">
+                <ScalarProperty Name="Id_Type_Equipment" ColumnName="Id_Type_Equipment" />
+                <ScalarProperty Name="Type_Equipment" ColumnName="Type_Equipment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Type_Materal">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Type_Materal">
+              <MappingFragment StoreEntitySet="Fur_Type_Materal">
+                <ScalarProperty Name="Id_Type_material" ColumnName="Id_Type_material" />
+                <ScalarProperty Name="Type_Materal" ColumnName="Type_Materal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_Type_Product">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_Type_Product">
+              <MappingFragment StoreEntitySet="Fur_Type_Product">
+                <ScalarProperty Name="Id_Fr_Type_Product" ColumnName="Id_Fr_Type_Product" />
+                <ScalarProperty Name="Type_Product" ColumnName="Type_Product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fur_User">
+            <EntityTypeMapping TypeName="FurnitureModel.Fur_User">
+              <MappingFragment StoreEntitySet="Fur_User">
+                <ScalarProperty Name="Id_Fur_User" ColumnName="Id_Fur_User" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specification">
+            <EntityTypeMapping TypeName="FurnitureModel.Specification">
+              <MappingFragment StoreEntitySet="Specification">
+                <ScalarProperty Name="Id_Specficaton" ColumnName="Id_Specficaton" />
+                <ScalarProperty Name="Id_Fr_Product" ColumnName="Id_Fr_Product" />
+                <ScalarProperty Name="Id_Fr_Matrerial" ColumnName="Id_Fr_Matrerial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
