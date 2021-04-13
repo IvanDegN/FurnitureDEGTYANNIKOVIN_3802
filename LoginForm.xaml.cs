@@ -110,5 +110,10 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             MessageBox.Show("u are clicked on 'Cancel'!","Warning!");
             this.Close();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

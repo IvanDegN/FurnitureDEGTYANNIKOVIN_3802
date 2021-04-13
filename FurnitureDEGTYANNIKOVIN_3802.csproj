@@ -139,6 +139,9 @@
       <DependentUpon>Master.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Fur_Role.cs" />
+    <Compile Include="RegisterForm.xaml.cs">
+      <DependentUpon>RegisterForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Specification.cs">
       <DependentUpon>FurnitureModel.tt</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Master.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
