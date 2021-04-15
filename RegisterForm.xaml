@@ -17,17 +17,17 @@
         <Rectangle Grid.Row="2" Fill="#FFF3E5AB"></Rectangle>
         <Label FontFamily="Comic Sans MS" Content="Фамилия:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,51,0,0" Grid.Row="1"/>
         <Label FontFamily="Comic Sans MS" Content="Имя:" HorizontalAlignment="Left" Margin="108,79,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="FirstNameTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="First_Name" />
         <Image Source="image/logo.png" HorizontalAlignment="Left" Margin="10,0,0,0"/>
         <Label FontFamily="Comic Sans MS" Content="Мебельман - форма регистрации" FontSize="20" Margin="92,10,5,39"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,79,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="NameTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,107,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="LastNameTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,79,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="Name"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,107,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="Last_Name"/>
         <Label FontFamily="Comic Sans MS" Content="Отчество:" HorizontalAlignment="Left" Margin="108,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label FontFamily="Comic Sans MS" Content="Логин:" HorizontalAlignment="Left" Margin="108,130,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label FontFamily="Comic Sans MS" Content="Пароль:" HorizontalAlignment="Left" Margin="108,156,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label FontFamily="Comic Sans MS" Content="Роль:" HorizontalAlignment="Left" Margin="108,187,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="173,191,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="CbRoles" SelectedValuePath="IdRole" SelectedValue="{Binding Path=IdRole}"/>
-        <TextBox FontFamily="Comic Sans MS" HorizontalAlignment="Left" Height="23" Margin="173,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="LoginTextBox"/>
+        <ComboBox HorizontalAlignment="Left" Margin="173,191,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="CbRoles" SelectedValuePath="Id_Fur_Role" SelectedValue="{Binding Path=Id_Fur_Role}"/>
+        <TextBox FontFamily="Comic Sans MS" HorizontalAlignment="Left" Height="23" Margin="173,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="Login"/>
         <PasswordBox HorizontalAlignment="Left" Margin="173,163,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="PasswordBox"/>
         <Button FontFamily="Comic Sans MS" Content="Регистрация" HorizontalAlignment="Left" Margin="190,239,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Name="BtnRegister" Click="BtnRegister_Click"/>
     </Grid>

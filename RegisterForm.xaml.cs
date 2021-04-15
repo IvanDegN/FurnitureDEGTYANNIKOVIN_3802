@@ -30,42 +30,133 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             int counter = 1;
             bool reg = true;
             char[] charac = { '*', '&', '{', '}', '|', '+' };
-            CheckRegistr(ref counter, charac);
 
-            if (reg)
+            // while(String.IsNullOrEmpty(NameTextBox.Text))
+            // {
+            //     MessageBox.Show("Enter value in field 'Name'!", "Input error!");
+            //     reg = false;
+            //     NameTextBox.Focus();
+            //     break;
+            // }
+
+
+            // while (String.IsNullOrEmpty(FirstNameTextBox.Text))
+            // {
+            //     MessageBox.Show("Enter value in fiele 'First name'!", "Input error!");
+            //     reg = false;
+            //     FirstNameTextBox.Focus();
+            //     break;
+            // }
+
+
+
+            // while (String.IsNullOrEmpty(LastNameTextBox.Text))
+            // {
+            //     MessageBox.Show("Enter value in field 'last name'!", "Input error!");
+            //     reg = false;
+            //     LastNameTextBox.Focus();
+            //     break;
+            // }
+
+            //while(String.IsNullOrEmpty(PasswordBox.Password))
+            // {
+            //     MessageBox.Show("Enter value in field 'Password'!", "Input error!");
+            //     reg = false;
+            //     PasswordBox.Focus();
+            //     break;
+            // }
+
+            //while(String.IsNullOrEmpty(LoginTextBox.Text))
+            // {
+            //     MessageBox.Show("Enter value in field 'Login'!", "Input error!");
+            //     reg = false;
+            //     LoginTextBox.Focus();
+            //     break;
+            // }
+            List<TextBox> textBoxes = new List<TextBox>() { First_Name, Name, Last_Name, Login  };
+
+            
+            
+           
+
+            foreach(TextBox tb in textBoxes)
             {
-                try
+                if(tb.Text.Length == 0)
                 {
+                    MessageBox.Show("Field " + tb.Name + " is empty!");
+                    reg = false;
+                    tb.Focus();
+                    
+                }
+            }
+
+
+            
+
+
+            if (!String.IsNullOrEmpty(Login.Text) && !String.IsNullOrEmpty(PasswordBox.Password))
+            {
+
+                foreach (var user in FurnityreBD.db.Fur_User)
+                {
+                    if (Login.Text == user.Login && PasswordBox.Password == user.Password)
+                    {
+
+                        MessageBox.Show("This user is exits yet!", "Error!");
+                        reg = false;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not all important field is filled!", "Error!");
+                        reg = false;
+                    }
+                }
+                   
+            }    
+                   
+       
+                if (reg)
+                {
+
                     Fur_User user = new Fur_User
                     {
-                        FirstName = FirstNameTextBox.Text,
-                        LastName = LastNameTextBox.Text,
-                        Name = NameTextBox.Text,
-                        Login = LoginTextBox.Text,
+                        FirstName = First_Name.Text,
+                        LastName = Last_Name.Text,
+                        Name = Name.Text,
+                        Login = Login.Text,
                         Password = PasswordBox.Password,
                         Fur_Role = CbRoles.SelectedItem as Fur_Role,
                     };
                     FurnityreBD.db.Fur_User.Add(user);
                     FurnityreBD.db.SaveChanges();
 
+
+
+
+
                 }
-                catch (Exception)
+                else
                 {
+                    CheckRegistr(ref counter, charac);
                     MessageBox.Show("Error registration!", "Error!");
-
                 }
-                finally
-                {
-                    MessageBox.Show("Registration is successful!", "Successfull!");
-                    Close();
-                }
-            }
-            else
-            {
-                CheckRegistr(ref counter, charac);
-            }
 
-            
+
+
+
+
+
+            //  MessageBox.Show("U are entered incorrect data!", "Error!");
+
+
+
+            //    MessageBox.Show("U are registered!","UwU:3");
+
+
+
+
+           // CheckRegistr(ref counter, charac);
         }
    
 
@@ -102,6 +193,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             return reg;
         }
 
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             FurnityreBD.db.Fur_Role.Load();
@@ -113,5 +205,9 @@ namespace FurnitureDEGTYANNIKOVIN_3802
         {
             DragMove();
         }
+
+       
+            
+        
     }
     }

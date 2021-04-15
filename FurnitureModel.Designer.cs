@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\10180030\source\repos\FurnitureDEGTYANNIKOVIN_3802\FurnitureModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\10180030\Source\Repos\FurnitureDEGTYANNIKOVIN_38021\FurnitureModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.
