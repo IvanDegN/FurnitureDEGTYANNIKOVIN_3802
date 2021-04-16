@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="Director" Height="450" Width="800">
+        Title="Director" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Director" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></Label>
+        <Label
+            FontFamily="Comic Sans MS" 
+            Content="Director" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            FontSize="30">
+        </Label>
+
+        <Button
+            FontFamily="Comic Sans MS" 
+            Content="Выход" Margin="706,385,10,10"
+            Name="BtnExit"
+            Click="BtnExit_Click">
+            
+        </Button>
+        
     </Grid>
 </Window>

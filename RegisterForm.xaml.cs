@@ -15,15 +15,25 @@ using System.Windows.Shapes;
 
 namespace FurnitureDEGTYANNIKOVIN_3802
 {
+    
     /// <summary>
     /// Логика взаимодействия для RegisterForm.xaml
     /// </summary>
     public partial class RegisterForm : Window
     {
+        
+        
         public RegisterForm()
         {
+            
             InitializeComponent();
+
+            
         }
+
+        
+        
+        
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
@@ -147,12 +157,14 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             return reg;
         }
 
+        
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             FurnityreBD.db.Fur_Role.Load();
             FurnityreBD.db.Fur_User.Load();
             CbRoles.ItemsSource = FurnityreBD.db.Fur_Role.ToList();
+            
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -160,8 +172,14 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             DragMove();
         }
 
-       
-            
-        
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+
+            LogingForm logingForm = new LogingForm();
+            logingForm.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            logingForm.Show();
+            this.Close();
+
+        }
     }
     }

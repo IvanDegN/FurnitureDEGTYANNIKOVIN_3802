@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="Associate_Director" Height="450" Width="800">
+        Title="Associate_Director" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Associate Director" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></Label>
+        <Label
+            FontFamily="Comic Sans MS" 
+            Content="Associate Director" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            FontSize="30">
+            
+        </Label>
+        
+        <Button
+            FontFamily="Comic Sans MS" 
+            Content="Выход" 
+            HorizontalAlignment="Left" 
+            Margin="707,389,0,0" 
+            VerticalAlignment="Top" 
+            Width="75"
+            Name="BtnExit"
+            Click="BtnExit_Click"/>
     </Grid>
 </Window>

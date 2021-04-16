@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="Master" Height="450" Width="800">
+        Title="Master" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Master" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></Label>
     </Grid>

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="RegisterForm" Height="483.239" Width="423.773" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
+        Title="RegisterForm" Height="483.239" Width="423.773" Loaded="Window_Loaded" MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" ></RowDefinition>
@@ -139,11 +140,22 @@
             FontFamily="Comic Sans MS" 
             Content="Регистрация" 
             HorizontalAlignment="Left" 
-            Margin="190,239,0,0" 
+            Margin="108,245,0,0" 
             Grid.Row="1" 
             VerticalAlignment="Top" 
             Width="75" 
             Name="BtnRegister" 
             Click="BtnRegister_Click"/>
+        
+        <Button
+            FontFamily="Comic Sans MS" 
+            Content="Выход" 
+            HorizontalAlignment="Left" 
+            Margin="218,245,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Width="75"
+            Name="BtnExit"
+            Click="BtnExit_Click"/>
     </Grid>
 </Window>

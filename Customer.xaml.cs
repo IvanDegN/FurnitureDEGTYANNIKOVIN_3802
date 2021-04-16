@@ -23,5 +23,13 @@ namespace FurnitureDEGTYANNIKOVIN_3802
         {
             InitializeComponent();
         }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            LogingForm logingForm = new LogingForm();
+            logingForm.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            logingForm.Show();
+            this.Close();
+        }
     }
 }
