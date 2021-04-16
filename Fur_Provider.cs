@@ -22,7 +22,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
         }
     
         public int Id_Fur_Provider { get; set; }
-        public string Name { get; set; }
+        public string Name_Provider { get; set; }
         public string Address { get; set; }
         public string Delivery_Address { get; set; }
     

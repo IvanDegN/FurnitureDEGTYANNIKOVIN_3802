@@ -64,7 +64,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             if (!String.IsNullOrEmpty(TbLogin.Text) && !String.IsNullOrEmpty(PasswordBox.Password))
             {
 
-                foreach (var user in FurnityreBD.db.Fur_User)
+                foreach (var user in BD.db.Fur_User)
                 {
                     if (TbLogin.Text == user.Login && PasswordBox.Password == user.Password)
                     {
@@ -96,8 +96,8 @@ namespace FurnitureDEGTYANNIKOVIN_3802
                         Password = PasswordBox.Password,
                         Fur_Role = CbRoles.SelectedItem as Fur_Role,
                     };
-                    FurnityreBD.db.Fur_User.Add(user);
-                    FurnityreBD.db.SaveChanges();
+                    BD.db.Fur_User.Add(user);
+                    BD.db.SaveChanges();
 
 
 
@@ -161,9 +161,9 @@ namespace FurnitureDEGTYANNIKOVIN_3802
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            FurnityreBD.db.Fur_Role.Load();
-            FurnityreBD.db.Fur_User.Load();
-            CbRoles.ItemsSource = FurnityreBD.db.Fur_Role.ToList();
+            BD.db.Fur_Role.Load();
+            BD.db.Fur_User.Load();
+            CbRoles.ItemsSource = BD.db.Fur_Role.ToList();
             
         }
 

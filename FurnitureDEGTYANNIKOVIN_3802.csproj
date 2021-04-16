@@ -138,12 +138,18 @@
     <Compile Include="Master.xaml.cs">
       <DependentUpon>Master.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MaterialsDataGrid.xaml.cs">
+      <DependentUpon>MaterialsDataGrid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Fur_Role.cs" />
     <Compile Include="RegisterForm.xaml.cs">
       <DependentUpon>RegisterForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Specification.cs">
       <DependentUpon>FurnitureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
     </Compile>
     <Page Include="Associate_Director.xaml">
       <SubType>Designer</SubType>
@@ -187,7 +193,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MaterialsDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegisterForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

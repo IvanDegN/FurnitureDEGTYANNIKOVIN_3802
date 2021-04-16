@@ -32,7 +32,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             bool login = false;
             int IdRole = 0;
             Fur_Role NameRole = new Fur_Role();
-            foreach (var users in FurnityreBD.db.Fur_User)
+            foreach (var users in BD.db.Fur_User)
             {
                 if(LoginTextBox.Text == users.Login && PasswordPasswordBox.Password == users.Password)
                 {

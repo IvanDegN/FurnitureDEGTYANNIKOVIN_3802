@@ -9,8 +9,8 @@
         <EntityTypeShape EntityType="FurnitureModel.Fur_Equipment" Width="1.5" PointX="10" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Fur_Furniture" Width="1.5" PointX="11" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Fur_Manager" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Material" Width="1.5" PointX="14" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Material_Unit_Of_Measurement" Width="1.5" PointX="11.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Material" Width="2.5" PointX="15.375" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Material_Unit_Of_Measurement" Width="3" PointX="11.625" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Fur_Operation_Specification" Width="1.5" PointX="13" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Fur_Order" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Fur_Product" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />

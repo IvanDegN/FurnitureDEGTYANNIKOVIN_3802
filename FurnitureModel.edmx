@@ -106,7 +106,7 @@
             <PropertyRef Name="Id_Fur_Provider" />
           </Key>
           <Property Name="Id_Fur_Provider" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_Provider" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Delivery_Address" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -602,7 +602,7 @@
             <PropertyRef Name="Id_Fur_Provider" />
           </Key>
           <Property Name="Id_Fur_Provider" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Delivery_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Fur_Furniture" Relationship="Self.FK_Fur_Furniture_Fur_Provider" FromRole="Fur_Provider" ToRole="Fur_Furniture" />
@@ -1105,8 +1105,8 @@
           <EntitySetMapping Name="Fur_Provider">
             <EntityTypeMapping TypeName="FurnitureModel.Fur_Provider">
               <MappingFragment StoreEntitySet="Fur_Provider">
+                <ScalarProperty Name="Name_Provider" ColumnName="Name_Provider" />
                 <ScalarProperty Name="Id_Fur_Provider" ColumnName="Id_Fur_Provider" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
               </MappingFragment>
