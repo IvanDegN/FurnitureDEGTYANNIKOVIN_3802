@@ -1,5 +1,5 @@
+-- Realization validation all fields through loop while
 # FurnitureDEGTYANNIKOVIN_3802
--- Realization validation all fields through loop while:
             while (String.IsNullOrEmpty(NameTextBox.Text))
             {
                 MessageBox.Show("Enter value in field 'Name'!", "Input error!");
