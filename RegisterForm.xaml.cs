@@ -31,59 +31,14 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             bool reg = true;
             char[] charac = { '*', '&', '{', '}', '|', '+' };
 
-            // while(String.IsNullOrEmpty(NameTextBox.Text))
-            // {
-            //     MessageBox.Show("Enter value in field 'Name'!", "Input error!");
-            //     reg = false;
-            //     NameTextBox.Focus();
-            //     break;
-            // }
-
-
-            // while (String.IsNullOrEmpty(FirstNameTextBox.Text))
-            // {
-            //     MessageBox.Show("Enter value in fiele 'First name'!", "Input error!");
-            //     reg = false;
-            //     FirstNameTextBox.Focus();
-            //     break;
-            // }
-
-
-
-            // while (String.IsNullOrEmpty(LastNameTextBox.Text))
-            // {
-            //     MessageBox.Show("Enter value in field 'last name'!", "Input error!");
-            //     reg = false;
-            //     LastNameTextBox.Focus();
-            //     break;
-            // }
-
-            //while(String.IsNullOrEmpty(PasswordBox.Password))
-            // {
-            //     MessageBox.Show("Enter value in field 'Password'!", "Input error!");
-            //     reg = false;
-            //     PasswordBox.Focus();
-            //     break;
-            // }
-
-            //while(String.IsNullOrEmpty(LoginTextBox.Text))
-            // {
-            //     MessageBox.Show("Enter value in field 'Login'!", "Input error!");
-            //     reg = false;
-            //     LoginTextBox.Focus();
-            //     break;
-            // }
-
-            List<TextBox> textBoxes = new List<TextBox>() { First_Name, Name, Last_Name, Login  };
-            List<String> rusWords = new List<string>() { "Имя", "Фамилия", "Отчество", "Логин" };
-
             
+            List<TextBox> textBoxes = new List<TextBox>() { TbName, TbFamilyName, TbMiddleName, TbLogin  };
             
-           
+
 
             foreach(TextBox tb in textBoxes)
             {
-                if(tb.Text.Length == 0)
+                if(String.IsNullOrEmpty(tb.Text))
                 {
                     MessageBox.Show("Field " + tb.Name + " is empty!");
                     reg = false;
@@ -96,12 +51,12 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             
 
 
-            if (!String.IsNullOrEmpty(Login.Text) && !String.IsNullOrEmpty(PasswordBox.Password))
+            if (!String.IsNullOrEmpty(TbLogin.Text) && !String.IsNullOrEmpty(PasswordBox.Password))
             {
 
                 foreach (var user in FurnityreBD.db.Fur_User)
                 {
-                    if (Login.Text == user.Login && PasswordBox.Password == user.Password)
+                    if (TbLogin.Text == user.Login && PasswordBox.Password == user.Password)
                     {
 
                         MessageBox.Show("This user is exits yet!", "Error!");
@@ -110,9 +65,10 @@ namespace FurnitureDEGTYANNIKOVIN_3802
                     }
                     else
                     {
-                        MessageBox.Show("Not all important field is filled!", "Error!");
-                        reg = false;
+                        MessageBox.Show("You are registered!", "UwU:3");
+                        break;
                     }
+                    
                 }
                    
             }    
@@ -123,10 +79,10 @@ namespace FurnitureDEGTYANNIKOVIN_3802
 
                     Fur_User user = new Fur_User
                     {
-                        FirstName = First_Name.Text,
-                        LastName = Last_Name.Text,
-                        Name = Name.Text,
-                        Login = Login.Text,
+                        FamilyName = TbFamilyName.Text,
+                        Name = TbName.Text,
+                        MiddleName = TbName.Text,
+                        Login = TbLogin.Text,
                         Password = PasswordBox.Password,
                         Fur_Role = CbRoles.SelectedItem as Fur_Role,
                     };
@@ -149,21 +105,17 @@ namespace FurnitureDEGTYANNIKOVIN_3802
 
 
 
-            //  MessageBox.Show("U are entered incorrect data!", "Error!");
-
-
-
-            //    MessageBox.Show("U are registered!","UwU:3");
-
-
-
-
-           // CheckRegistr(ref counter, charac);
+            
         }
    
 
         private bool CheckRegistr(ref int counter, char[] charac)
         {
+            while(String.IsNullOrEmpty(PasswordBox.Password))
+            {
+                MessageBox.Show("Field 'Password' is should filled! ");
+                break;
+            }
             bool reg;
             if (PasswordBox.Password.Length < 6 || PasswordBox.Password.Length > 18)
             {

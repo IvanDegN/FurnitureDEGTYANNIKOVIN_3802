@@ -681,9 +681,9 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id_Role" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FamilyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Fur_Order" Relationship="Self.FK_Fur_Order_Fur_User" FromRole="Fur_User" ToRole="Fur_Order" />
           <NavigationProperty Name="Fur_Role" Relationship="Self.FK_Fur_User_Fur_Role" FromRole="Fur_User" ToRole="Fur_Role" />
@@ -1181,9 +1181,9 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FamilyName" ColumnName="FirstName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="LastName" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
