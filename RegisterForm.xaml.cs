@@ -73,7 +73,9 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             //     LoginTextBox.Focus();
             //     break;
             // }
+
             List<TextBox> textBoxes = new List<TextBox>() { First_Name, Name, Last_Name, Login  };
+            List<String> rusWords = new List<string>() { "Имя", "Фамилия", "Отчество", "Логин" };
 
             
             
