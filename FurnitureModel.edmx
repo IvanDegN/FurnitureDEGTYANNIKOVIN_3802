@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище FurnitureModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище FurnitureModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Fr_Type_Furniture">
           <Key>
             <PropertyRef Name="Id_Fr_Type_Furniture" />
@@ -106,7 +106,7 @@
             <PropertyRef Name="Id_Fur_Provider" />
           </Key>
           <Property Name="Id_Fur_Provider" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_Provider" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Delivery_Address" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -169,7 +169,7 @@
           <Key>
             <PropertyRef Name="Id_Fur_User" />
           </Key>
-          <Property Name="Id_Fur_User" Type="int" Nullable="false" />
+          <Property Name="Id_Fur_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Id_Role" Type="int" Nullable="false" />
@@ -479,8 +479,7 @@
             <End Role="Fur_User" EntitySet="Fur_User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FurnitureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -603,7 +602,7 @@
             <PropertyRef Name="Id_Fur_Provider" />
           </Key>
           <Property Name="Id_Fur_Provider" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Delivery_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Fur_Furniture" Relationship="Self.FK_Fur_Furniture_Fur_Provider" FromRole="Fur_Provider" ToRole="Fur_Furniture" />
@@ -682,9 +681,9 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id_Role" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FamilyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Fur_Order" Relationship="Self.FK_Fur_Order_Fur_User" FromRole="Fur_User" ToRole="Fur_Order" />
           <NavigationProperty Name="Fur_Role" Relationship="Self.FK_Fur_User_Fur_Role" FromRole="Fur_User" ToRole="Fur_Role" />
@@ -1106,8 +1105,8 @@
           <EntitySetMapping Name="Fur_Provider">
             <EntityTypeMapping TypeName="FurnitureModel.Fur_Provider">
               <MappingFragment StoreEntitySet="Fur_Provider">
+                <ScalarProperty Name="Name_Provider" ColumnName="Name_Provider" />
                 <ScalarProperty Name="Id_Fur_Provider" ColumnName="Id_Fur_Provider" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
               </MappingFragment>
@@ -1182,9 +1181,9 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FamilyName" ColumnName="FirstName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="LastName" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>

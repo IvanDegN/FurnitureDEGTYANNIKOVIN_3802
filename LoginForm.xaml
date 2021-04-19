@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="Форма авторизации" Height="323.239" Width="428.773">
+        Title="Форма авторизации" Height="323.239" Width="449.919" MouseDown="Window_MouseDown">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -15,14 +15,14 @@
         <Rectangle Grid.Row="0" Fill="#FFF3E5AB"></Rectangle>
 
         <Rectangle Grid.Row="2" Fill="#FFF3E5AB"></Rectangle>
-        <Label Content="Логин" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,61,0,0" Grid.Row="1"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="123,87,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label FontFamily="Comic Sans MS" Content="Логин" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="131,60,0,0" Grid.Row="1"/>
+        <Label FontFamily="Comic Sans MS" Content="Пароль" HorizontalAlignment="Left" Margin="123,87,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="187,64,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="LoginTextBox"/>
         <PasswordBox HorizontalAlignment="Left" Margin="187,92,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="PasswordPasswordBox"/>
         <Image Source="image/logo.png" HorizontalAlignment="Left"></Image>
-        <Label Content="Мебельман - форма авторизации" FontSize="20" Margin="92,10,5,39"></Label>
-        <Button Content="Войти" Name="LoginBtn" HorizontalAlignment="Left" Margin="144,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="LoginBtn_Click"/>
-        <Button Content="Отмена" Name="CancelBth" HorizontalAlignment="Left" Margin="232,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="CancelBth_Click"/>
+        <Label FontFamily="Comic Sans MS" Content="Мебельман - форма авторизации" FontSize="20" Margin="92,10,5,39"></Label>
+        <Button FontFamily="Comic Sans MS" Content="Войти" Name="LoginBtn" HorizontalAlignment="Left" Margin="144,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="LoginBtn_Click"/>
+        <Button FontFamily="Comic Sans MS" Content="Отмена" Name="CancelBth" HorizontalAlignment="Left" Margin="232,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="CancelBth_Click"/>
 
     </Grid>
 </Window>

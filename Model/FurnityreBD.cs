@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureDEGTYANNIKOVIN_3802
 {
-    static class FurnityreBD
+    static class BD
     {
         static public FurnitureBD db = new FurnitureBD();    
     }

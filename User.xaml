@@ -1,0 +1,84 @@
+﻿<Window x:Class="FurnitureDEGTYANNIKOVIN_3802.User"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
+        mc:Ignorable="d"
+        Title="User" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="0">
+        </Rectangle>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="2">
+        </Rectangle>
+        
+        <Label
+            FontFamily="Comic Sans MS"
+            Content="Мебельман - окно пользователя"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="30"
+               >
+        </Label>
+
+        <Button
+            FontFamily="Comic Sans MS"
+            Height="20"
+            Width="51"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom" Margin="0,0,10,10"
+            Content="Выход"
+            Name="BtnExit"
+            Click="BtnExit_Click"
+            Grid.Row="2"
+            >
+            
+        </Button>
+
+        <Image 
+            Source="image/logo.png" 
+            HorizontalAlignment="Left"
+            >
+            
+        </Image>
+
+        <Button
+            Grid.Row="1"
+            Height="30"
+            Width="150"
+            HorizontalAlignment="Center" Margin="190,0,0,0"
+            Content="Мебель"
+            FontSize="15"
+            Name="BtnFurniture"
+            Click="BtnFurniture_Click">
+            
+        </Button>
+
+        <Button
+            Grid.Row="1"
+            Height="30"
+            Width="150"
+            HorizontalAlignment="Center" Margin="-200,0,0,0"
+            Content="Материал"
+            FontSize="15"
+            Name="BtnMaterials"
+            Click="BtnMaterials_Click">
+
+        </Button>
+
+
+
+    </Grid>
+</Window>

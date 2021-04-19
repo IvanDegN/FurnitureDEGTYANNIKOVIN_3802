@@ -27,48 +27,93 @@ namespace FurnitureDEGTYANNIKOVIN_3802
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             bool login = false;
             int IdRole = 0;
-            foreach (var users in FurnityreBD.db.Fur_User)
+            Fur_Role NameRole = new Fur_Role();
+            foreach (var users in BD.db.Fur_User)
             {
                 if(LoginTextBox.Text == users.Login && PasswordPasswordBox.Password == users.Password)
                 {
                     login = true;
                     IdRole = users.Id_Role;
+                    NameRole = users.Fur_Role;
                     break;
                 }
+                
             }
 
-            if(login)
-            {
-                switch (IdRole)
+
+                if (login)
                 {
-                    case 1:
+                    MessageBox.Show($"U are logged as {NameRole}");
+                    switch (IdRole)
+                    {
+                        case 1:
+                            Associate_Director associate_Director = new Associate_Director();
+                            associate_Director.Show();
 
-                        break;
+                            break;
 
-                    case 2:
+                        case 2:
+                            Customer customer = new Customer();
+                            customer.Show();
 
-                        break;
+                            break;
 
-                    case 3:
+                        case 3:
+                            Director director = new Director();
+                            director.Show();
 
-                        break;
+                            break;
 
-                    case 4:
+                        case 4:
+                            Master master = new Master();
+                            master.Show();
 
-                        break;
+                            break;
 
-                    case 5:
+                        case 5:
+                            Manager manager = new Manager();
+                            manager.Show();
 
-                        break;
+                            break;
+
+                        default:
+                            MessageBox.Show("Error!");
+                            break;
+                    }
+
+
                 }
+                else
+                {
+                    MessageBox.Show("Incorrect data in field Login or Password!");
+                    
+                }
+
+            
+
+            
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error auth!");
             }
         }
 
         private void CancelBth_Click(object sender, RoutedEventArgs e)
         {
+            LoginTextBox.Text = "";
+            PasswordPasswordBox.Password = "";
+            MessageBox.Show("u are clicked on 'Cancel'!","Warning!");
+            this.Close();
+        }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
