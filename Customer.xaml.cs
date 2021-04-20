@@ -31,5 +31,13 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             logingForm.Show();
             this.Close();
         }
+
+        private void OpenMaterials_Click(object sender, RoutedEventArgs e)
+        {
+            MaterialsDataGrid materialsDataGrid = new MaterialsDataGrid();
+            materialsDataGrid.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            materialsDataGrid.Show();
+            this.Close();
+        }
     }
 }

@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ddbd73ffd3d1473b9511a99f5251cb31" Name="Diagram1">
-        <EntityTypeShape EntityType="FurnitureModel.Fr_Type_Furniture" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Equipment" Width="1.5" PointX="10" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Furniture" Width="1.5" PointX="11" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Manager" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Material" Width="2.5" PointX="15.375" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Material_Unit_Of_Measurement" Width="3" PointX="11.625" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Operation_Specification" Width="1.5" PointX="13" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Order" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Product" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Provider" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Role" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_Assembly_Unit" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_hardware" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_Materials" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Equipment" Width="1.5" PointX="7.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Materal" Width="1.5" PointX="11.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Product" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Fur_User" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FurnitureModel.Specification" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="true" />
+      <Diagram DiagramId="ddbd73ffd3d1473b9511a99f5251cb31" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="FurnitureModel.Fr_Type_Furniture" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Equipment" Width="1.5" PointX="10" PointY="12.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Furniture" Width="1.5" PointX="11" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Manager" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Material" Width="2.5" PointX="15.375" PointY="4.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Material_Unit_Of_Measurement" Width="3" PointX="11.625" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Operation_Specification" Width="1.5" PointX="13" PointY="10.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Order" Width="1.5" PointX="3" PointY="6.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Product" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Provider" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Role" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_Assembly_Unit" Width="1.5" PointX="6" PointY="7.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_hardware" Width="1.5" PointX="3" PointY="14.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Specification_Materials" Width="1.5" PointX="6" PointY="4.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Equipment" Width="1.5" PointX="7.75" PointY="13" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Materal" Width="1.5" PointX="11.75" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_Type_Product" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Fur_User" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="FurnitureModel.Specification" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="false" />
         <AssociationConnector Association="FurnitureModel.FK_Fur_Furniture_Fr_Type_Furniture" ManuallyRouted="false" />
         <AssociationConnector Association="FurnitureModel.FK_Fur_Equipment_Fur_Type_Equipment" ManuallyRouted="false" />
         <AssociationConnector Association="FurnitureModel.FK_Fur_Furniture_Fur_Provider" ManuallyRouted="false" />

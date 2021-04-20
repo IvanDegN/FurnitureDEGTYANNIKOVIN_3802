@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="MaterialsDataGrid" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="MaterialsDataGrid" Height="450" Width="865" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -43,79 +43,10 @@
         <DataGrid
             Grid.Row="1"
             Name="MaterialsGrid"
-            AutoGenerateColumns="False"
-            CanUserAddRows="False">
-            <DataGrid.Columns>
-                
-                <DataGridTextColumn 
-                    Header="№"
-                    Width="0.2*"
-                    Binding="{Binding Id_Fur_Material}">
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Артикль"
-                    Width="0.3*"
-                    Binding="{Binding Article}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Количество"
-                    Width="0.4*"
-                    Binding="{Binding Amount}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Поставщик"
-                    Width="0.4*"
-                    Binding="{Binding Name_Provider}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Тип материала"
-                    Width="0.5*"
-                    Binding="{Binding Type_Materal}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Стоимость"
-                    Width="0.4*"
-                    Binding="{Binding Cost}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="ГОСТ"
-                    Width="0.3*"
-                    Binding="{Binding State_Standart}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Длина"
-                    Width="0.3*"
-                    Binding="{Binding Length}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Описание"
-                    Width="0.5*"
-                    Binding="{Binding Description}">
-                    
-                </DataGridTextColumn>
-
-                <DataGridTextColumn
-                    Header="Ед.изм."
-                    Width="0.3*"
-                    Binding="{Binding Fur_Material_Unit_Of_Measurement1}">
-                    
-                </DataGridTextColumn>
-            </DataGrid.Columns>
+            AutoGenerateColumns="True"
+            CanUserAddRows="False"
+            CanUserSortColumns="True">
+            
             
         </DataGrid>
 

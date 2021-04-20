@@ -16,7 +16,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
     public partial class FurnitureBD : DbContext
     {
         public FurnitureBD()
-            : base("name=BD")
+            : base("name=FurnitureBD")
         {
         }
     

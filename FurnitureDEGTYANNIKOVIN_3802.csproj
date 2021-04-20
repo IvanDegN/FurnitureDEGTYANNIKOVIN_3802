@@ -141,7 +141,10 @@
     <Compile Include="MaterialsDataGrid.xaml.cs">
       <DependentUpon>MaterialsDataGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Fur_Material_Unit_Of_Measurement.cs" />
+    <Compile Include="Model\Fur_Provider.cs" />
     <Compile Include="Model\Fur_Role.cs" />
+    <Compile Include="Model\Fur_Type_Materal.cs" />
     <Compile Include="RegisterForm.xaml.cs">
       <DependentUpon>RegisterForm.xaml</DependentUpon>
     </Compile>

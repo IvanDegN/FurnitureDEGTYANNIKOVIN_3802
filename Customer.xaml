@@ -14,7 +14,7 @@
             VerticalAlignment="Center" 
             FontSize="30">
         </Label>
-        
+
         <Button
             FontFamily="Comic Sans MS" 
             Content="Выход" 
@@ -24,5 +24,10 @@
             Width="75"
             Name="BtnExit"
             Click="BtnExit_Click"/>
+        <Button 
+            Margin="244,250,461,149"
+            Name="OpenMaterials"
+            Click="OpenMaterials_Click"
+            Content="Материалы"/>
     </Grid>
 </Window>
