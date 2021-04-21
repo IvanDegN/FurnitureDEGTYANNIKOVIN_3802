@@ -7,23 +7,46 @@
         mc:Ignorable="d"
         Title="Associate_Director" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="0">
+        </Rectangle>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="2">
+        </Rectangle>
+
+
         <Label
             FontFamily="Comic Sans MS" 
-            Content="Associate Director" 
+            Content="Мебельман - окно зам. деректора" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             FontSize="30">
-            
+
         </Label>
-        
+
+        <Image 
+            Source="image/logo.png" 
+            HorizontalAlignment="Left"
+            />
+
         <Button
             FontFamily="Comic Sans MS" 
             Content="Выход" 
             HorizontalAlignment="Left" 
-            Margin="707,389,0,0" 
+             
             VerticalAlignment="Top" 
             Width="75"
             Name="BtnExit"
-            Click="BtnExit_Click"/>
+            Click="BtnExit_Click" Margin="707,9,0,0" Grid.Row="2"/>
     </Grid>
 </Window>

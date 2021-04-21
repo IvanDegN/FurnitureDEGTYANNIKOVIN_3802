@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FurnitureDEGTYANNIKOVIN_3802"
         mc:Ignorable="d"
-        Title="MaterialsDataGrid" Height="450" Width="865" Loaded="Window_Loaded">
+        Title="MaterialsDataGrid" Height="450" Width="1130" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -49,6 +50,16 @@
             
             
         </DataGrid>
+
+
+        <Button
+            FontFamily="Comic Sans MS" 
+            Content="Выход" 
+            Name="BtnExit"
+            Click="BtnExit_Click"
+            Grid.Row="2" Margin="970,10,10,10">
+
+        </Button>
 
     </Grid>
 </Window>

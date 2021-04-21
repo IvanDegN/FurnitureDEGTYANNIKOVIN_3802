@@ -22,6 +22,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
     {
         public MaterialsDataGrid()
         {
+           
             InitializeComponent();
         }
 
@@ -31,7 +32,7 @@ namespace FurnitureDEGTYANNIKOVIN_3802
            // BD.db.Fur_Provider.Load();
           //  BD.db.Fur_Type_Materal.Load();
           //  BD.db.Fur_Material_Unit_Of_Measurement.Load();
-            MaterialsGrid.ItemsSource = BD.db.Fur_Material.ToList();
+            //MaterialsGrid.ItemsSource = BD.db.Fur_Material.ToList();
             //MaterialsGrid.ItemsSource = BD.db.Fur_Type_Materal.ToList();
             //MaterialsGrid.ItemsSource = BD.db.Fur_Material_Unit_Of_Measurement.ToList();
             var query =
@@ -57,6 +58,14 @@ namespace FurnitureDEGTYANNIKOVIN_3802
             };
            MaterialsGrid.ItemsSource = query.ToList();
 
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            LogingForm logingForm = new LogingForm();
+            logingForm.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            logingForm.Show();
+            this.Close();
         }
     }
 }

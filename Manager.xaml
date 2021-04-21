@@ -7,6 +7,39 @@
         mc:Ignorable="d"
         Title="Manager" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Manager" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></Label>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="0">
+        </Rectangle>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="2">
+        </Rectangle>
+
+
+        <Label Content="Мебельман - окно менеджера" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" ></Label>
+
+        <Image 
+            Source="image/logo.png" 
+            HorizontalAlignment="Left"
+            />
+
+        <Button
+            FontFamily="Comic Sans MS" 
+            Content="Выход" 
+            Name="BtnExit"
+            Click="BtnExit_Click"
+            Grid.Row="2" Margin="682,10,10,10">
+
+        </Button>
+
     </Grid>
 </Window>

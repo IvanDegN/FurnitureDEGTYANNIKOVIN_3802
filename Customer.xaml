@@ -7,27 +7,55 @@
         mc:Ignorable="d"
         Title="Customer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="0">
+        </Rectangle>
+
+        <Rectangle
+            Fill="#FFF3E5AB"
+            Grid.Row="2">
+        </Rectangle>
+
         <Label
             FontFamily="Comic Sans MS" 
-            Content="Customer" 
+            Content="Мебельман - окно заказчика" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             FontSize="30">
         </Label>
 
+
+        <Button 
+            
+            Name="OpenMaterials"
+            Click="OpenMaterials_Click"
+            Content="Материалы" Grid.Row="1" Margin="244,108,462,125"/>
+
         <Button
             FontFamily="Comic Sans MS" 
             Content="Выход" 
             HorizontalAlignment="Left" 
-            Margin="707,389,0,0" 
             VerticalAlignment="Top" 
             Width="75"
             Name="BtnExit"
-            Click="BtnExit_Click"/>
-        <Button 
-            Margin="244,250,461,149"
-            Name="OpenMaterials"
-            Click="OpenMaterials_Click"
-            Content="Материалы"/>
+            Click="BtnExit_Click"
+            Grid.Row="2" Margin="707,9,0,0"
+            />
+
+        <Image 
+            Source="image/logo.png" 
+            HorizontalAlignment="Left"
+            />
+
+
     </Grid>
 </Window>

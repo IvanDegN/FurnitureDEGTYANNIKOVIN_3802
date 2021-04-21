@@ -210,7 +210,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\FurnityreBD.cs" />
+    <Compile Include="Model\BD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

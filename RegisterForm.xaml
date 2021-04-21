@@ -50,8 +50,8 @@
             Margin="10,0,0,0"/>
         
         <Label 
-            FontFamily="Comic Sans MS"
-            Content="Мебельман - форма регистрации"
+            FontFamily="Comic Sans MS" 
+            Content="Мебельман - окно регистрации"
             FontSize="20"
             Margin="92,10,5,39"/>
         
